@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1600335679 source:d:\contest\booking_system_codeforces\main.cpp
+	<bits/stdc++.h>
+	<cmath>
+

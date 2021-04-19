@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1600767194 source:d:\codeforces\registration_system\main.cpp
+	<bits/stdc++.h>
+	<cmath>
+
