@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1625043270 source:d:\programming\ds_algo\char dfs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

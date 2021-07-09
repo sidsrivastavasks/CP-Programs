@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1602083046 source:d:\ds_algo\balance_parynthasis\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1623861162 source:d:\programming\practice\cycle detection bfs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1623940152 source:d:\programming\ds_algo\cycle detection bfs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

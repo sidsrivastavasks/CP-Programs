@@ -11,11 +11,11 @@ struct Pair getMinMaxNum(int arr[], int low, int high){
 	if (low==high)
     {
         minmax.max = arr[low];
-        minmax.min = arr[low];    
+        minmax.min = arr[low];     
         return minmax;
     }
      
-    if (high==low+1)
+    else if (high==low+1)
     {
         if (arr[low] > arr[high])
         {

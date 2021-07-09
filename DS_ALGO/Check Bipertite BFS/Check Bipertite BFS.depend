@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1624021153 source:d:\programming\ds_algo\check bipertite bfs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

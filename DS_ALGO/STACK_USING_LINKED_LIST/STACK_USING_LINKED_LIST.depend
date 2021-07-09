@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1597900312 source:d:\ds_algo\stack_using_linked_list\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1599220322 source:d:\ds_algo\binary_try_ll\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

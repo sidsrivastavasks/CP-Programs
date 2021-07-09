@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1601652565 source:d:\ds_algo\add_two_number_ll\main.c
+	<stdio.h>
+	<stdlib.h>
+

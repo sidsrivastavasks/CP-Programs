@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1608704846 source:d:\ds_algo\queue_circular_array\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

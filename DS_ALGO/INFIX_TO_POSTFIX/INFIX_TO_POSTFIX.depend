@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604470186 source:d:\ds_algo\infix_to_postfix\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
