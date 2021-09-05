@@ -87,10 +87,7 @@ void PrimeNumbers()
 }
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
 
-	cout << max((c - b), (c - a)) << endl;
 }
 int main()
 {
@@ -99,7 +96,7 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
+	ll t;
 	cin >> t;
 	while (t--)
 	{

@@ -10,7 +10,7 @@ using namespace std;
 #define FIO ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 const ll M = 1e9 + 7;
 typedef pair<int, int>	pii;
-typedef pair<ll, ll>		pll;
+typedef pair<ll, ll>	pll;
 typedef vector<int>		vi;
 typedef vector<ll>		vl;
 typedef vector<pii>		vpii;
@@ -85,21 +85,35 @@ void PrimeNumbers()
 	cout << "\n";
 
 }
+
+
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
+	int k;
+	cin >> k;
+	int cnt = 1, pp = 1;
+	while (cnt < k) {
+		if (pp % 10 != 3 && pp % 3 != 0) {
+			cnt++;
+		}
+		pp++;
 
-	cout << max((c - b), (c - a)) << endl;
+	}
+
+	cout << pp << endl;
+
+
 }
+
+
+
 int main()
 {
 #ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-	FIO;
-	ll t ;
+	int t;
 	cin >> t;
 	while (t--)
 	{

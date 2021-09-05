@@ -87,10 +87,20 @@ void PrimeNumbers()
 }
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
+	ll n;
+	cin >> n;
+	ll sum = 0;
+	ll mid = ceil((double)(n) / 2.0);
 
-	cout << max((c - b), (c - a)) << endl;
+	for (int i = 0; i < n / 2 ; i++) {
+		for (int j = 0; j < n; j++) {
+			sum += max(abs(i + 1 - mid), abs(j + 1 - mid));
+			//cout << "( " << i + 1 << ", " << j + 1 << " )" << " ";
+		}
+		//cout << endl;
+	}
+
+	cout << 2 * sum << endl;
 }
 int main()
 {
@@ -99,7 +109,7 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
+	ll t;
 	cin >> t;
 	while (t--)
 	{

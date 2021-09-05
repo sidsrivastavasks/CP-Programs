@@ -87,10 +87,41 @@ void PrimeNumbers()
 }
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
+	vector<int> H;
+	int X, Y;
 
-	cout << max((c - b), (c - a)) << endl;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		int pp;
+		cin >> pp;
+
+		H.push_back(pp);
+	}
+
+	cin >> X >> Y;
+
+
+	sort(H.begin(), H.end());
+
+	int cnt = 0, ptr = 0;
+	while (ptr < n && (X > 0 || Y > 0 )) {
+		if (X > 0 && H[ptr] <= X) {
+			X -= H[ptr];
+			cnt++;
+		}
+		else if (Y > 0 && H[ptr] <= Y) {
+			Y -= H[ptr];
+			cnt++;
+		}
+		else {
+			break;
+		}
+		ptr++;
+	}
+
+	cout << cnt << endl;
+
 }
 int main()
 {
@@ -99,8 +130,8 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
-	cin >> t;
+	int t = 1;
+	//cin >> t;
 	while (t--)
 	{
 		solve();

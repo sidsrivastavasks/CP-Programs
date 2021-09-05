@@ -87,10 +87,44 @@ void PrimeNumbers()
 }
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
+	ll n, k;
+	cin >> n >> k;
+	map<int, int> mp;
+	for (int i = 0; i < n; i++) {
+		ll pp;
+		cin >> pp;
 
-	cout << max((c - b), (c - a)) << endl;
+		mp[pp]++;
+	}
+
+	ll moves  = 0;
+	ll cnt = 0;
+
+	for (auto itr = mp.begin(); itr != mp.end(); itr++) {
+		if (itr->second > 1) {
+			cnt++;
+		}
+	}
+
+	ll dist = mp.size() - cnt;
+
+	while (dist > 0) {
+		int temp = dist % k;
+		move += (dist / k);
+		dist = temp;
+	}
+	// if (dist > k) {
+	// 	if (dist % k == 0) {
+	// 		moves += dist / k;
+	// 	}
+	// 	else {
+	// 		moves += dist / k + dist % k;
+	// 	}
+	// }
+
+	moves += cnt;
+
+	cout << moves << endl;
 }
 int main()
 {
@@ -99,7 +133,7 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
+	ll t;
 	cin >> t;
 	while (t--)
 	{

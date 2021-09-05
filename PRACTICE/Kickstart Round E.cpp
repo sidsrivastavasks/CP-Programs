@@ -85,12 +85,42 @@ void PrimeNumbers()
 	cout << "\n";
 
 }
+ll test = 1;
 void solve()
 {
-	ll a, b, c;
-	cin >> a >> b >> c;
 
-	cout << max((c - b), (c - a)) << endl;
+	string s;
+	cin >> s;
+
+	map<char, int> mp;
+
+	int n = s.length();
+	for (int i = 0; i < n; i++) {
+		mp[s[i]]++;
+	}
+
+	string str = "";
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (s[i] != s[j] && mp[s[j]] >= 1) {
+				str += s[j];
+				mp[s[j]]--;
+				break;
+			}
+		}
+	}
+
+	cout << "Case #" << test << ": ";
+
+	if (str.length() == s.length()) {
+		cout << str << endl;
+	}
+	else {
+		cout << "IMPOSSIBLE" << endl;
+	}
+
+
+	//cout << "Case #" << test << ": " << ans << "\n";
 }
 int main()
 {
@@ -99,11 +129,12 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
+	ll t;
 	cin >> t;
 	while (t--)
 	{
 		solve();
+		test++;
 	}
 	return 0;
 }

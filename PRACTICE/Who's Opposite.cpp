@@ -90,7 +90,20 @@ void solve()
 	ll a, b, c;
 	cin >> a >> b >> c;
 
-	cout << max((c - b), (c - a)) << endl;
+	ll dif = abs(a - b);
+	ll mx = max({a, b, c});
+
+	if (dif * 2 < mx) {
+		cout << "-1" << endl;
+	}
+	else {
+		if (c > dif) {
+			cout << c - dif << endl;
+		}
+		else {
+			cout << c + dif << endl;
+		}
+	}
 }
 int main()
 {
@@ -99,7 +112,7 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	FIO;
-	ll t ;
+	ll t;
 	cin >> t;
 	while (t--)
 	{

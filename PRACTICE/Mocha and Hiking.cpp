@@ -1,49 +1,129 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-#define ff first
-#define ss second
-#define int long long
+#define ll long long
 #define pb push_back
-#define pii pair< int,int >
-#define fast ios::sync_with_stdio(0) , cin.tie(0) , cout.tie(0) ;
+#define mp make_pair
+#define endl "\n"
+#define ld long double
+#define allb(x) sort((x).begin(), (x).end())
+#define allg(x) sort((x).begin(), (x).end(), greater<int>())
+#define FIO ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+const ll M = 1e9 + 7;
+typedef pair<int, int>    pii;
+typedef pair<ll, ll>        pll;
+typedef vector<int>        vi;
+typedef vector<ll>        vl;
+typedef vector<pii>        vpii;
+typedef vector<pll>        vpll;
 
-const int nax = 1e5 + 5;
-const int inf = 1e15;
-vector<pii> g[nax] ;
-vector<int> dist(nax , inf ) , vis(nax, 0);
-
-void dijistra()
+int power(int a, int b) {
+    if (b == 0) return 1;
+    int temp = power(a, b / 2);
+    int result = temp * temp;
+    if (result % 2 == 1) result *= a;
+    return result;
+}
+ll ModExponent(ll p, ll q)
 {
-    priority_queue< pii , vector<pii> , greater<pii >> Q;
-    dist[ 1 ] = 0;
-    Q.push( {0, 1} );
-
-    while ( !Q.empty() )
+    ll int y = 0;
+    if (q == 0) {return 1;}
+    if (q % 2 == 0)
     {
-        pii p = Q.top();
-        Q.pop();
-        if ( vis[p.ss] ) continue;
+        y = ModExponent(p, q / 2);
+        return (y * y) % M;
+    }
+    else
+    {
+        y = ModExponent(p, q - 1);
+        return ((p % M) * (y)) % M;
+    }
 
-        vis[ p.ss ] = 1;
-        for (auto &i : g[p.ss] )
+}
+bool is_prime(int a)
+{
+    for (int i = 2; i * i <= a; i++) {
+        if (a % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+void PrimeNumbers()
+{
+    //time complexity using sieve of Eratoshthenes O(loglogn)
+
+    int n;
+    cin >> n;
+    int prime[n + 1];
+    for (int i = 0; i <= n; i++)
+    {
+        prime[i] = 1;
+    }
+    prime[0] = 0;
+    prime[1] = 0;
+    //As the pair repeat after the square root
+    //of any number so we will just check till square root
+    //and update all the multiples of the no. to 0
+    for (int i = 0; i <= sqrt(n); i++)
+    {
+        if (prime[i] == 1)
         {
-            if ( !vis[i.ff] )
+            for (int j = 2; i * j <= n; j++)
             {
-
-                if ( dist[i.ff] > p.ff + i.ss )
-                {
-                    dist[i.ff] = p.ff + i.ss;
-                    Q.push( { dist[i.ff] , i.ff } );
-                }
+                prime[i * j] = 0;
             }
         }
     }
-}
+    //print all index that contains 1
+    for (int i = 0; i <= n; i++)
+    {
+        if (prime[i] == 1)
+        {
+            cout << i << " ";
+        }
+    }
+    cout << "\n";
 
-int main()
+}
+void solve()
 {
 
+    ll n;
+    cin >> n;
+
+    vl ans;
+    ll a[n + 1];
+    int ptr = -1;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    for (int i = n - 1; i >= 0; i--) {
+        if (a[i] == 0) {
+            ptr = i + 1;
+            break;
+        }
+    }
+
+    for (int i = 0; i < ptr; i++) {
+        ans.pb(i + 1);
+    }
+    ans.pb(n + 1);
+    for (int i = ptr; i < n; i++) {
+        ans.pb(i + 1);
+    }
+
+    ll pp = ans.size();
+    for (int i = 0; i < pp; i++) {
+        cout << ans[i] << " ";
+    }
+    cout << endl;
+
+
+
+}
+int main()
+{
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -53,16 +133,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n , m;
-        cin >> n >> m;
-        for (int i = 0 ; i < m ; i++ )
-        {
-            int u , v, w;
-            cin >> u >> v >> w;
-            g[u].pb({v, w});
-        }
-        dijistra();
-        for (int i = 1 ; i <= n ; i++ )
-            cout << dist[i] << " " ;
+        solve();
     }
+    return 0;
 }
